@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>  
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="./js/index.js"></script>
+    <title>Admin Panel</title>
+</head>
+
+<body>
+
+    <div class="containerStyle">
+
+        <!-- Seccion para agregar productos -->
+        <div class="containerForm">
+            <div>
+                <h3>Agregar productos</h3>
+            </div>
+            <form class="formContainer">
+                <div>
+                    <label>Title: </label>
+                    <input id="title" type="text">
+                </div>
+                <div>
+                    <label>Price: </label>
+                    <input id="price" type="number">
+                </div>
+                <div>
+                    <label class="form-label">Thumbnail: </label>
+                    <input id="thumbnail" type="text">
+                </div>
+                <button onclick="addProducto()" type='button'>Guardar</button>
+            </form>
+        </div>
+
+        <!-- Seccion para listar productos -->
+        <div class="containerList">
+            <div>
+                <h3>Lista de productos</h3>
+            </div>
+            <div>
+                <ul id="productos"></ul>
+            </div>
+        </div>
+
+         <!-- Seccion para Web Sockets -->
+        <div class="containerList">
+            <div>
+                <h3>Sala de chat</h3>
+            </div>
+            <div>
+                <label>Email: </label>
+                <input id="email" type="text" required>
+                <label>Mensaje: </label>
+                <input id="mensaje" type="text">
+                <button onclick="sendMsg()" type='button'>Enviar</button>
+                <hr>
+                <ul reversed id="chat"></ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
